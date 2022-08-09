@@ -6,7 +6,7 @@ html, body {
 	padding: 0;
 	width: 100%;
 	height: 100%;
-	min-width: var(--min, 320px);
+	min-width: var(--min);
 }
 body {
     //min-height: -webkit-fill-available;
@@ -14,13 +14,20 @@ body {
 html {
     //height: -webkit-fill-available;
 }
+.cnt-full-wrap {
+    margin-left: calc(var(--paddingContainer) * -1);
+    margin-right: calc(var(--paddingContainer) * -1);
+    padding-left: var(--paddingContainer);
+    padding-right: var(--paddingContainer);
+}
 .inner-wrap, .page {
 	position: relative;
 	clear: both;
 	margin: 0 auto;
-	padding: 0 20px;
-	min-width: var(--min, 320px);
-	max-width: var(--max, 1200px);
+    padding-left: var(--paddingContainer);
+    padding-right: var(--paddingContainer);
+	min-width: var(--min);
+	max-width: var(--max);
 	width: 100%;
 	.inner-wrap {
 		min-width: 0;
@@ -44,7 +51,7 @@ html {
 .cnt-section {
 	position: relative;
 	clear: both;
-	min-width: var(--min, 320px);
+	min-width: var(--min);
 	width: 100%;
 }
 .wrap {
@@ -75,6 +82,133 @@ html {
 		transition: all ease 0.2s;
 	}
 }
+.header {
+    z-index: 99;
+    background-color: #fff;
+    padding: 15px 0 10px 0;
+    .logo-wrap {
+        margin-bottom: 5px;
+        text-align: center;
+        .logo {
+            width: 170px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    .contacts-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0 -15px 0 -15px;
+    }
+    .link-wrap {
+        font-size: 20px;
+        line-height: 1.5;
+        color: var(--clr-title);
+        margin: 5px 15px;
+        flex-shrink: 0;
+        a {
+            color: inherit;
+        }
+    }
+    .soc-wrap {
+        margin: 5px 15px;
+        flex-shrink: 0;
+    }
+    .actions-wrap {
+        display: flex;
+        margin: 0 -15px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .action-wrap {
+        margin: 5px 15px;
+        flex-shrink: 0;
+    }
+    .btn {
+        padding: 0 10px;
+    }
+    .menu-langs {
+        display: flex;
+        margin: 0 -5px;
+        li {
+            margin: 0 5px;
+        }
+    }
+}
+.footer {
+    color: #fff;
+    text-align: center;
+    background-color: var(--clr-title);
+    line-height: 20/14;
+    p {
+        margin-bottom: 15px;
+        a {
+            &:not(:hover) {
+                color: inherit;
+            }
+        }
+    }
+    .btn {
+        padding: 0 10px;
+    }
+}
+.footer-main-panel {
+    .inner-wrap {
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
+    .logos-wrap {
+        display: flex;
+        margin: 0 -15px 12px 0;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .logo-wrap {
+        width: 160px;
+        margin: 0 15px 0 0;
+        flex-shrink: 0;
+    }
+    .logos-info-wrap {
+        width: 100%;
+        flex-shrink: 0;
+        margin: 10px 0 0 0;
+        padding: 0 30px;
+    }
+    .info-section {
+        margin-bottom: 5px;
+    }
+    .info-section-title {
+        line-height: 22px;
+        display: inline;
+    }
+    .info-section-value {
+        font-size: 20px;
+        line-height: 30/20;
+        letter-spacing: -0.02em;
+        display: inline;
+    }
+    .action-wrap {
+        padding: 5px 0 0 0;
+    }
+    .link-phone, .link-email {
+        &:not(:hover) {
+            color: inherit;
+        }
+    }
+    .button-soc {
+        margin: 0 auto;
+    }
+}
+.footer-bottom-panel {
+    .inner-wrap {
+        padding-top: 15px;
+        padding-bottom: 30px;
+    }
+}
 .logo {
     display: block;
     position: relative;
@@ -90,5 +224,130 @@ html {
     img {
         display: block;
         width: 100%;
+    }
+}
+@media (min-width: 1024px) {
+    .footer-main-panel {
+        text-align: left;
+        .inner-wrap {
+            padding-top: 60px;
+            padding-bottom: 15px;
+            display: flex;
+        }
+        .logos-wrap {
+            width: 25.8%;
+            flex-shrink: 0;
+            padding: 0 20px 0 0;
+            margin: 0;
+            display: block;
+        }
+        .logo-wrap {
+            margin: 0 0 15px 0;
+        }
+        .logos-info-wrap {
+            padding: 15px 0 0 0;
+            margin: 0;
+        }
+        .info-wrap {
+            flex: 1;
+            display: flex;
+            padding: 0 20px 0 0;
+            margin: 0;
+        }
+        .info-section {
+            margin-bottom: 15px;
+        }
+        .info-section-title {
+            display: block;
+            padding: 0;
+            margin: 0 0 5px 0;
+            &:last-child {
+                margin: 0;
+            }
+        }
+        .info-section-value {
+            display: block;
+        }
+        .info-column-wrap {
+            width: 50%;
+            flex-shrink: 0;
+            padding-right: 15px;
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+        .actions-wrap {
+            padding: 0 5rem 0 0;
+            flex-shrink: 0;
+        }
+        .action-wrap {
+            padding: 0;
+            margin-bottom: 10px;
+        }
+        .button-soc {
+            margin: 0 10px 0 0;
+        }
+    }
+    .footer-bottom-panel {
+        text-align: center;
+        .inner-wrap {
+            padding-top: 0;
+            padding-bottom: 60px;
+        }
+    }
+    .header {
+        padding: 0;
+        background-color: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        .inner-wrap {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            min-height: 84px;
+            display: flex;
+            align-items: center;
+        }
+        .logo-wrap {
+            width: 185px;
+            margin: 0;
+            flex-shrink: 0;
+            padding-left: 15px;
+            .logo {
+                margin: 0;
+            }
+        }
+        .action-wrap {
+            min-width: 107px;
+        }
+        .contacts-wrap {
+            flex: 1;
+            padding: 0 10px;
+            align-items: center;
+            margin: 0;
+        }
+        .soc-wrap {
+            min-width: 55px;
+        }
+    }
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .footer-main-panel {
+        .actions-wrap {
+            padding-right: 0;
+        }
+        .logos-wrap {
+            width: 20%;
+        }
+    }
+    .header {
+        .action-wrap {
+            min-width: 0;
+        }
+        .soc-wrap {
+            min-width: 0;
+            margin-right: 15px;
+        }
     }
 }

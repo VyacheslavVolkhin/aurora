@@ -1,9 +1,15 @@
 :root {
-	--clr-base: #000;
-	--clr-att: #f00;
+	--clr-base: #666;
+    --clr-title: #000;
+	--clr-att: #EE4325;
+	--clr-att-hover: #ED9134;
+	--clr-light: #666;
+    --clr-border: #EFEFEF;
 
-	--min: 320px;
-	--max: 1200px;
+	--min: 360px;
+	--max: 1250px;
+    
+    --paddingContainer: 10px;
 
 	font-size: 10px;
 }
@@ -17,11 +23,51 @@
 			main styles
 \* ----------------------------------- */
 body {
-	color: var(--clr-base, #000);
+	color: var(--clr-base);
 	background: #fff;
+    font-size: 14px;
+    line-height: 20/14;
+    letter-spacing: -0.01em;
+    &::-webkit-scrollbar {
+        height: 4px;
+        width: 4px;
+        background-color: #f0f0f0;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #999;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #999;
+    }
+    &::-webkit-scrollbar-button:vertical:start:decrement {
+        background-color: transparent;
+        width: 0;
+        height: 0;
+    }
+    &::-webkit-scrollbar-button:vertical:end:increment {
+        background-color: transparent;
+        width: 0;
+        height: 0;
+    }
+    &::-webkit-scrollbar-button:horizontal:start:decrement {
+        background-color: transparent;
+        width: 0;
+        height: 0;
+    }
+    &::-webkit-scrollbar-button:horizontal:end:increment {
+        background-color: transparent;
+        width: 0;
+        height: 0;
+    }
 }
-p, ul, ol {
+body.compensate-for-scrollbar {
+    .wrap {
+        padding-right: 4px;
+    }
+}
+p, ul, ol, table, blockquote, .bq-text {
 	position: relative;
+    margin-bottom: 20/14em;
 	img {
 		max-width: 100%;
 	}
@@ -29,24 +75,47 @@ p, ul, ol {
 		margin-bottom: 0 !important;
 	}
 }
-
 li {
 	position: relative;
+    padding-left: 20px;
+    &:before {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        margin-top: -5px;
+        background-color: var(--clr-att);
+    }
+}
+ul ul, ul.list-inner {
+    li {
+        padding-left: 14px;
+        &:before {
+            width: 4px;
+            height: 4px;
+            background-color: var(--clr-title);
+            margin-top: -2px;
+        }
+    }
 }
 a {
 	text-decoration: none;
-	color: var(--clr-att, #f00);
+	color: var(--clr-att);
 	&:hover {
 		text-decoration: none;
-		color: var(--clr-att, #f00);
+		color: var(--clr-att-hover);
 	}
 }
 a.link-main, .link-main {
 	text-decoration: none;
 	border-bottom: 1px solid;
-	&:hover {
-		border-bottom: none;
-	}
+}
+.link-phone {
+    white-space: nowrap;
 }
 h1, .h1-title,
 h2, .h2-title,
@@ -56,7 +125,92 @@ h5, .h5-title,
 h6, .h6-title {
 	display: block;
 	position: relative;
+    font-weight: bold;
+    margin: 1em 0;
     &:first-child {
         margin-top: 0;
+    }
+}
+.h1-title, h1 {
+    font-size: 24px;
+    line-height: 33/24;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    letter-spacing: normal;
+    color: var(--clr-title);
+    &.title-large {
+        font-size: 34px;
+        line-height: 46/34;
+        margin-bottom: 30px;
+    }
+}
+.h2-title, h2 {
+    font-size: 16px;
+    line-height: 26/16;
+    font-weight: 600;
+    color: var(--clr-title);
+    margin: 0 0 10px 0;
+}
+.h3-title, h3 {
+    font-size: 14px;
+    line-height: 22/14;
+    font-weight: bold;
+}
+.text-att, .title-att {
+    color: var(--clr-att);
+}
+.text-light, .title-light {
+    color: var(--clr-light);
+}
+.text-center, .title-center {
+    text-align: center;
+}
+@media (max-width: 1399px) {
+    :root {
+        font-size: 9.5px;
+    }
+}
+@media (max-width: 1199px) {
+    :root {
+        font-size: 9px;
+    }
+}
+@media (max-width: 1023px) {
+    :root {
+        font-size: 8px;
+    }
+}
+@media (max-width: 767px) {
+    :root {
+        font-size: 7px;
+    }
+}
+@media (min-width: 1024px) {
+    :root {
+        --paddingContainer: 30px;
+    }
+    .h1-title, h1 {
+        &.title-main {
+            font-size: 3.4rem;
+            line-height: 46/34;
+            margin-bottom: 30px;
+        }
+        &.title-large {
+            font-size: 4.8rem;
+            line-height: 65/48;
+            letter-spacing: -0.03em;
+        }
+    }
+    .h2-title, h2 {
+        &.title-main {
+            font-size: 2.4rem;
+            line-height: 32/24;
+            letter-spacing: normal;
+        }
+    }
+}
+@media (min-width: 1400px) {
+    :root {
+        --paddingContainer: 40px;
     }
 }
