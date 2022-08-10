@@ -241,6 +241,7 @@
             position: relative;
             padding: 1px 10px 1px 15px;
             color: inherit;
+            transition: none;
             &:before {
                 content: "";
                 display: block;
@@ -251,7 +252,7 @@
                 right: 0;
                 border: 1px solid var(--clr-att);
                 opacity: 0;
-                transition: opacity ease 0.2s;
+                //transition: opacity ease 0.2s;
             }
             &:after {
                 content: "";
@@ -265,12 +266,9 @@
                 margin-top: -5px;
                 background-color: var(--clr-att);
                 opacity: 0;
-                transition: opacity ease 0.2s;
+                //transition: opacity ease 0.2s;
             }
-            &:hover {
-                color: var(--clr-att);
-            }
-            &.active {
+            &.active, &:hover {
                 color: inherit;
                 padding-left: 36px;
                 &:before, &:after {
@@ -676,7 +674,7 @@
             }
             a {
                 padding: 15px 30px;
-                &.active {
+                &.active, &:hover {
                     padding-left: 50px;
                 }
                 &:after {
