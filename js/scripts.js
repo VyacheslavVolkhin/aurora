@@ -20,6 +20,14 @@ $(document).ready(function(){
 	  return this;
 	};
     
+    
+    //section-more
+    $('.main-article-box .article-section-more .btn').on('click', function() {
+        $('.main-article-box .section-video').addClass('active');
+        $('.main-article-box .article-section-more').slideUp(200);
+        return false;
+    })
+    
 	
     //popup block
 	$('.js-popup-wrap .js-btn-toggle').on('click', function() {

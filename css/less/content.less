@@ -62,6 +62,13 @@
 }
 .main-article-box {
     margin-bottom: 30px;
+    .article-section-more {
+        text-align: center;
+        margin: 15px 0;
+        .btn {
+            min-width: 163px;
+        }
+    }
     .article-section-wrap {
         border: 1px solid var(--clr-border);
         padding: 15px;
@@ -69,6 +76,7 @@
     .article-info-wrap {
         padding: 15px;
         border: 1px solid var(--clr-border);
+        animation: fadein ease 0.2;
     }
     .article-video-wrap {
         margin-bottom: 15px;
@@ -453,6 +461,15 @@
     background: fade(#000, 70);
 }
 @media (max-width: 1023px) {
+    .main-article-box {
+        .section-video {
+            &:not(.active) {
+                .article-info-wrap {
+                    display: none;
+                }
+            }
+        }
+    }
     .main-list-box {
         .wrap-second {
             display: none;
@@ -535,7 +552,10 @@
             flex-shrink: 0;
         }
         .article-info-wrap {
-            flex: 1;
+            width: 51%;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
             padding: 3rem;
             border: none;
             p {
@@ -548,6 +568,27 @@
             border: 1px solid var(--clr-border);
             position: relative;
             padding: 0;
+            &:not(.active) {
+                border: none;
+                padding: 0;
+                &:before {
+                    display: none;
+                }
+                .article-info-wrap {
+                    width: 0;
+                    padding: 0;
+                    height: 0;
+                }
+                .article-video-wrap {
+                    width: 100%;
+                    padding: 0;
+                    .item-tile-video {
+                        height: 456px;
+                        max-width: 970px;
+                        margin: 0 auto;
+                    }
+                }
+            }
             &:before {
                 content: "";
                 display: block;
@@ -559,6 +600,9 @@
                 background-color: var(--clr-border);
                 margin-left: -1px;
             }
+        }
+        .article-section-more {
+            margin: 30px 0;
         }
         .section-photo {
             padding: 30px 0 0 0;
@@ -664,10 +708,16 @@
             padding-right: 120px;
         }
         .menu {
-            display: flex;
-            flex-wrap: wrap;
+            //display: flex;
+            //flex-wrap: wrap;
+            display: block;
+            columns: 2;
+            column-gap: 0;
             li {
-                width: 50%;
+                //width: 50%;
+                width: 100%;
+                page-break-inside: avoid;
+                break-inside: avoid-column;
                 margin: 0;
                 padding: 0;
                 flex-shrink: 0;
