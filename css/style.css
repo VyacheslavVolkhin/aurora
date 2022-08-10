@@ -929,6 +929,9 @@ body {
   padding: 15px;
   color: var(--clr-title);
 }
+.item-tile-new:hover .tile-title {
+  color: var(--clr-att);
+}
 .item-tile-new .tile-photo-wrap {
   width: 100%;
   -ms-flex-negative: 0;
@@ -975,6 +978,12 @@ body {
   width: 100%;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+}
+.item-tile-new .tile-action .link-main {
+  color: var(--clr-att);
+}
+.item-tile-new .tile-action .link-main:hover {
+  color: var(--clr-att-hover);
 }
 .item-tile-new .tile-photo {
   height: 108px;
@@ -1710,6 +1719,9 @@ body {
 .photo-box .item-tile-info:last-child {
   margin-bottom: 0;
 }
+.page-ru .popup-box .fancybox-button.fancybox-close-small:before {
+  content: "Закрыть";
+}
 .popup-box {
   display: none;
 }
@@ -1717,6 +1729,7 @@ body {
   font-size: 20px;
   font-size: 2rem;
   line-height: 1.5;
+  padding-right: 60px;
   letter-spacing: -0.02em;
   color: var(--clr-title);
   margin: 0 0 30px 0;
@@ -1724,6 +1737,9 @@ body {
 }
 .popup-box .popup-title-wrap .h1-title {
   margin: 0 0 5px 0;
+}
+.popup-box .popup-title-wrap .h2-title {
+  line-height: 32px;
 }
 .popup-box.fancybox-content {
   width: 600px;
@@ -1753,6 +1769,10 @@ body {
 }
 .popup-box .fancybox-button.fancybox-close-small:before {
   content: "Close";
+}
+.popup-box p img {
+  display: block;
+  width: 100%;
 }
 .fancybox-bg {
   background: rgba(0, 0, 0, 0.7);

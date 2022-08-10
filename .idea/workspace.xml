@@ -52,6 +52,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/htmlworker/Sites/0060/aurora/_html",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -87,7 +88,7 @@
       <workItem from="1611809548947" duration="8959000" />
       <workItem from="1611829072213" duration="3000" />
       <workItem from="1611832621185" duration="264000" />
-      <workItem from="1659682890575" duration="15422000" />
+      <workItem from="1659682890575" duration="19455000" />
     </task>
     <servers />
   </component>

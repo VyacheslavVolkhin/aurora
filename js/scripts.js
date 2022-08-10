@@ -110,7 +110,7 @@ $(document).ready(function(){
             dots: false,
             slidesToShow: 4,
             variableWidth: false,
-            infinite: true,
+            infinite: false,
             adaptiveHeight: false,
             prevArrow: '<span class="btn-action-ico ico-arrow ico-arrow-prev"></span>',
             nextArrow: '<span class="btn-action-ico ico-arrow ico-arrow-next"></span>',

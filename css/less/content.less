@@ -393,16 +393,29 @@
         }
     }
 }
+.page-ru {
+    .popup-box {
+        .fancybox-button.fancybox-close-small {
+            &:before {
+                content: "Закрыть";
+            }
+        }
+    }
+}
 .popup-box {
     display: none;
     .popup-title-wrap {
         font-size: 2rem;
         line-height: 1.5;
+        padding-right: 60px;
         letter-spacing: -0.02em;
         color: var(--clr-title);
         margin: 0 0 3rem 0;
         .h1-title {
             margin: 0 0 5px 0;
+        }
+        .h2-title {
+            line-height: 32px;
         }
     }
     &.fancybox-content {
@@ -429,6 +442,12 @@
         }
         &:before {
             content: "Close";
+        }
+    }
+    p {
+        img {
+            display: block;
+            width: 100%;
         }
     }
 }
