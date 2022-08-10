@@ -1961,6 +1961,9 @@ body {
     padding: 0;
     width: 33.33%;
   }
+  .main-about-box .item-tile-icon {
+    min-height: 100%;
+  }
   .main-about-box .logo-wrap {
     margin-bottom: 30px;
   }
