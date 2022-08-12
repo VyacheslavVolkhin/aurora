@@ -1784,6 +1784,9 @@ body {
 .fancybox-bg {
   background: rgba(0, 0, 0, 0.7);
 }
+.section-hidden.cnt-section {
+  display: none;
+}
 @media (max-width: 1023px) {
   .main-article-box .section-video:not(.active) .article-info-wrap {
     display: none;

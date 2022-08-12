@@ -25,6 +25,7 @@ $(document).ready(function(){
     $('.main-article-box .article-section-more .btn').on('click', function() {
         $('.main-article-box .section-video').addClass('active');
         $('.main-article-box .article-section-more').slideUp(200);
+        $('.section-hidden.cnt-section').slideDown(200);
         return false;
     })
     
